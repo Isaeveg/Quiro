@@ -1,0 +1,66 @@
+.footer {
+  background: var(--c-terciary);
+  padding: 106rem 12rem 81rem 12rem;
+
+  @include mobile {
+    padding: 50rem 12rem 50rem 12rem;
+  }
+  &__container {
+    display: flex;
+    gap: 108rem;
+
+    @include desktop-small {
+      gap: 20rem;
+    }
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__logo {
+    color: var(--c--paragraph);
+    font-size: 24rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 26rem;
+  }
+
+  &__desc {
+    color: var(--c--paragraph);
+    font-size: 16rem;
+    font-weight: 400;
+    max-width: 432rem;
+
+    @include tablet {
+      margin-inline: auto;
+      text-align: center;
+    }
+  }
+
+  &__info-header,
+  &__hours-header {
+    color: var(--c--paragraph);
+    font-size: 20rem;
+    font-weight: 600;
+    margin-bottom: 9rem;
+  }
+
+  &__info-value,
+  &__hours-value {
+    margin-bottom: 37rem;
+    color: var(--c--paragraph);
+    font-size: 16rem;
+    font-weight: 400;
+    display: inline-flex;
+    gap: 16rem;
+  }
+
+  &__hours-value {
+    margin-bottom: 15rem;
+    display: grid;
+  }
+  a {
+    color: var(--c-black);
+  }
+}

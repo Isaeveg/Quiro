@@ -1,0 +1,47 @@
+.title {
+  color: var(--c--paragraph);
+  font-size: 48rem;
+  font-weight: 700;
+  margin-bottom: 70rem;
+  text-align: center;
+  margin-top: 111rem;
+
+  @include tablet-small {
+    margin-top: 50rem;
+    margin-bottom: 30rem;
+  }
+}
+
+.desc {
+  color: var(--c--paragraph);
+  text-align: center;
+  font-size: 16rem;
+  font-weight: 400;
+  max-width: 837rem;
+  margin-inline: auto;
+  margin-bottom: 125rem;
+
+  @include tablet-small {
+    margin-bottom: 65rem;
+  }
+}
+
+.btn {
+  border-radius: 50rem;
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  padding: 11rem 49rem;
+  color: var(--c-terciary);
+  font-size: 20rem;
+  font-weight: 600;
+  transition: var(--transition);
+
+  &._primary {
+    background: var(--c-primary);
+  }
+  &:hover {
+    background: darken($c-primaryry, 15%);
+  }
+}

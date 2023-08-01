@@ -1,0 +1,127 @@
+.header {
+  padding: 50rem 0;
+
+  @include tablet {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    height: 70rem;
+    background: var(--bg-header);
+    align-items: center;
+    padding: 10rem 0;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    color: var(--c--paragraph);
+    font-size: 24rem;
+    font-weight: 600;
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    gap: 24rem;
+
+    // burger
+    @include tablet {
+      position: fixed;
+      width: 70%;
+      height: 100%;
+      flex-direction: column;
+      left: 0;
+      top: 0;
+      background: var(--bg-burger);
+      justify-content: center;
+      transform: translateX(-120%);
+      transition: var(--transition);
+    }
+
+    &._active {
+      transform: translateX(0);
+      z-index: 999;
+    }
+
+    .icon-close {
+      position: absolute;
+      top: 20rem;
+      right: 20rem;
+      color: var(--c-black);
+
+      @include mobile {
+        top: 10rem;
+        right: 10rem;
+      }
+    }
+  }
+
+  &__a {
+    color: var(--c-black);
+    font-size: 16rem;
+    font-weight: 400;
+    transition: var(--transition);
+    position: relative;
+
+    &:hover {
+      color: var(--c-primary);
+
+      &::before {
+        width: calc(100% - 12px);
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0%;
+      background-color: var(--c-primary);
+      height: 1px;
+      border-radius: 30rem;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: var(--transition);
+    }
+
+    &._active {
+      color: var(--c-primary);
+      font-weight: 600;
+
+      &::before {
+        width: calc(100% - 12px);
+      }
+    }
+
+    @include tablet {
+      font-size: 25rem;
+      color: var(--c-text-white);
+
+    }
+  }
+}
+
+.icon-menu,
+.icon-close {
+  cursor: pointer;
+  display: none;
+  transition: opacity 0.5s;
+
+  @include tablet {
+    display: inline-block;
+    font-size: 50rem;
+  }
+}
+
+
+.icon-menu {
+  &._active {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

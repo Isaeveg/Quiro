@@ -1,0 +1,28 @@
+.image-slider {
+  &__image {
+    img {
+      border-radius: 30rem;
+      width: 1170rem;
+      height: 570rem;
+      flex-shrink: 0;
+
+      @include tablet-small {
+        height: 450rem;
+      }
+
+      @include mobile {
+        height: 350rem;
+      }
+    }
+  }
+}
+
+.swiper-pagination {
+  margin-bottom: 27rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--c-black);
+  max-width: 13rem;
+  max-height: 13rem;
+}
